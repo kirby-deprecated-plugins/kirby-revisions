@@ -4,8 +4,7 @@ Revisions for Kirby CMS. A kind of version backup of the content text files.
 
 ## Features
 
-- When page is created, a new revision is created.
-- When a page is updated, a new revision is created.
+- When page is created or updated, a new revision is created.
 - When a page is deleted, all the revisions for that page are deleted.
 - When a page slug is renamed, the revisions folder for that page is renamed.
 - When a page sort number changes, nothing happends to the revisions.
@@ -101,7 +100,7 @@ It would be great if you want to develop an alternative field for it!
 
 ### Config
 
-```
+```php
 c::get('revisions.limit', 2);
 c::get('revisions.path', kirby()->roots()->index() . DS . 'revisions');
 ```
