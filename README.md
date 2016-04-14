@@ -14,6 +14,12 @@ Revisions for Kirby CMS. A kind of version backup of the content text files.
 - A field is included to list the revisions on a page.
 - Translations are available.
 
+## Installation
+
+1. Put the `revisions` folder into the `/site/plugins` folder.
+1. If you also want the field, scroll down to see the blueprint for it.
+1. There are also options. For more info, scroll down.
+
 ## Requirements
 
 - Kirby 2.3 beta
@@ -26,7 +32,7 @@ Also make sure that files and folders are not open in any application, as the ap
 
 ## Use at own risk!
 
-I don't take any responsibility of things that can go wrong with this plugin. It includes all things for example lost revisions or content. If you are not sure, try it out on a test environment first.
+I don't take any responsibility of things that can go wrong with this plugin. It includes all things like lost revisions or content. If you are not sure, try it out on a test environment first.
 
 ## Advanced
 
