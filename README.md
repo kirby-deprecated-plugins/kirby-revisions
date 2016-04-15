@@ -11,11 +11,11 @@ Revisions for Kirby CMS. A kind of version backup of the content text files.
 
 ## Docs
 
-- [Installation](https://github.com/jenstornell/kirby-revisions/blob/master/INSTALL.md)
-- [Config](https://github.com/jenstornell/kirby-revisions/blob/master/CONFIG.md)
-- [Field](https://github.com/jenstornell/kirby-revisions/blob/master/FIELD.md)
-- [System (Advanced)](https://github.com/jenstornell/kirby-revisions/blob/master/SYSTEM.md)
-- [Actions (Advanced)](https://github.com/jenstornell/kirby-revisions/blob/master/ACTIONS.md)
+- [Installation](https://github.com/jenstornell/kirby-revisions/blob/master/docs/INSTALL.md)
+- [Config](https://github.com/jenstornell/kirby-revisions/blob/master/docs/CONFIG.md)
+- [Field](https://github.com/jenstornell/kirby-revisions/blob/master/docs/FIELD.md)
+- [System (Advanced)](https://github.com/jenstornell/kirby-revisions/blob/master/docs/SYSTEM.md)
+- [Actions (Advanced)](https://github.com/jenstornell/kirby-revisions/blob/master/docs/ACTIONS.md)
 
 ## Requirements
 
