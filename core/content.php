@@ -18,14 +18,21 @@ class RevisionContent {
 	public static function cleanup($page) {
 		$path = RevisionsFolder::languagePath( $page->id() );
 		$pages = array_reverse( glob( $path . DS . '*' ) );
-		$pages = array_slice($pages, c::get('revisions.limit', 2) );
-		if( ! empty( $pages ) ) {
-			foreach( $pages as $item ) {
-				if( file_exists( $item ) && is_writable( $item ) ) {
-					unlink( $item );
+		if( self::limit() !== false ) {
+			$pages = array_slice($pages, self::limit() );
+			if( ! empty( $pages ) ) {
+				foreach( $pages as $item ) {
+					if( file_exists( $item ) && is_writable( $item ) ) {
+						unlink( $item );
+					}
 				}
 			}
 		}
+	}
+
+	// Get revision limit number per page
+	public static function limit() {
+		return c::get('revisions.limit', 2);
 	}
 
 	// Get url by page and filename. Used in field template

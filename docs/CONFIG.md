@@ -7,7 +7,7 @@ c::get('revisions.path', kirby()->roots()->index() . DS . 'revisions');
 
 ## Limit
 
-By default a limit of maximum 2 revisions is set per page. You can change that limit to another number. If you want unlimited number of revisions, set the limit to `-1`.
+By default a limit of maximum 2 revisions is set per page. You can change that limit to another number. If you want unlimited number of revisions, set the limit to `false` (boolean).
 
 When a new revision is created, old ones are deleted. It will keep only the newest ones by the limit you have set.
 
