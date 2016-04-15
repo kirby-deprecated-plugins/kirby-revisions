@@ -2,6 +2,16 @@
 
 Revisions for Kirby CMS. A kind of version backup of the content text files.
 
+## Screenshots
+
+### System
+
+![](https://raw.githubusercontent.com/jenstornell/kirby-revisions/master/docs/system.png)
+
+### Field
+
+![](https://raw.githubusercontent.com/jenstornell/kirby-revisions/master/docs/field.png)
+
 ## Features
 
 - Creates, renames and delete revisions depending on what happends with the pages in the panel.

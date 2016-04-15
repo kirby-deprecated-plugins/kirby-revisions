@@ -6,7 +6,7 @@
 
 - Create
 - Update
-- Rename, if the current language is not the default language.
+- Rename *if the current language is not the default language.*
 
 **A revision is deleted on:**
 
@@ -14,7 +14,7 @@
 
 **A revision is renamed on:**
 
-- Rename, if the current language is the default language.
+- Rename *if the current language is the default language.*
 
 **Nothing will happend on:**
 
@@ -32,7 +32,11 @@ When a page is created or updated a revision is created like this:
 
 ## Renamed page
 
+### Default language
+
 When a page is renamed and if it's the default language, it will be renamed on the revisions side as well. No new revision is created, it will just rename the revision folder to be in sync with the content.
+
+### Not default language
 
 When a page is renamed and if it's not the default language, a new revision will be created, because in this case the slug is inside the content file.
 
