@@ -13,8 +13,8 @@ You need to install the plugin for the field to be installed.
 
 ```yaml
 fields:
-  name:
-    label: Revisions
+  revisions:
+    label: Older versions
     type: revisions
 ```
 
