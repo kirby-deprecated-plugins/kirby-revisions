@@ -2,22 +2,20 @@
 
 Revisions for Kirby CMS. A kind of version backup of the content text files.
 
-## Screenshots
-
-### System
+**System**
 
 ![](https://raw.githubusercontent.com/jenstornell/kirby-revisions/master/docs/system.png)
 
-### Field
+**Field**
 
 ![](https://raw.githubusercontent.com/jenstornell/kirby-revisions/master/docs/field.png)
 
 ## Features
 
-- Creates, renames and delete revisions depending on what happends with the pages in the panel.
+- Revisions are created, renamed and deleted depending on the page changes in the panel.
 - Multi language support.
-- Field to see what is happening on a page in the panel.
-- Translations avaiable.
+- Revisions field is included to see what is happening on a page in the panel.
+- Translations are avaiable.
 
 ## Docs
 
