@@ -55,7 +55,7 @@ class RevisionsFolder {
 
 	// Revisions + language folder
 	public static function language() {
-		if( ! empty( site()->language() ) ) {
+		if( site()->multilang() ) {
 			$language = '.revisions' . DS . site()->language()->code();
 		} else {
 			$language = '.revisions';

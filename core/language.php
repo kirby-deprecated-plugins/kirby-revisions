@@ -17,7 +17,7 @@ class RevisionsLanguage {
 
 	// Check if the current language is the default one
 	public static function isDefault() {
-		if( empty( site()->language() ) ) return true;
+		if( ! site()->multilang() ) return true;
 		if( site()->language()->default() ) return true;
 	}
 }

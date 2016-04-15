@@ -1,7 +1,7 @@
 # Config
 
 ```php
-c::get('revisions.limit', 2);
+c::get('revisions.limit', false);
 c::get('revisions.path', kirby()->roots()->index() . DS . 'revisions');
 ```
 

@@ -23,7 +23,7 @@ kirby()->hook('panel.page.delete', function( $page ) {
 
 // If page is renamed and is default language, rename revision, else add new revision.
 kirby()->hook('panel.page.move', function( $new, $old ) {
-	if( RevisionsLanguage::isDefault() === true ) {
+	if( RevisionsLanguage::isDefault() ) {
 		RevisionsFolder::rename( $old, $new );
 	} else {
 		RevisionsFolder::add( $new );

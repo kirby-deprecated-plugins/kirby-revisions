@@ -8,7 +8,7 @@ class RevisionContent {
 		if( file_exists( $language_path ) && is_writable( $language_path ) ) {
 			$content_path = $language_path . DS . $filename;
 			$has_copied = self::copy( $page->content()->root(), $content_path );
-			if( $has_copied === true ) {
+			if( $has_copied ) {
 				self::cleanup($page);
 			}
 		}
@@ -32,13 +32,17 @@ class RevisionContent {
 
 	// Get revision limit number per page
 	public static function limit() {
-		return c::get('revisions.limit', 2);
+		return c::get('revisions.limit', false);
 	}
 
 	// Get url by page and filename. Used in field template
 	public static function url( $page, $filename ) {
+		$language = '';
+		if( site()->multilang() ) {
+			$language = site()->language()->code() . '/';
+		}
 		$root = kirby()->urls()->index() . '/' . basename( RevisionsFolder::rootPath() );
-		$url = $root . '/' . $page->id() . '/.revisions/' . site()->language() . '/' . $filename;
+		$url = $root . '/' . $page->id() . '/.revisions/' . $language . $filename;
 		return $url;
 	}
 
