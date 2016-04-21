@@ -1,6 +1,6 @@
 # Revisions
 
-*Version 0.1*
+*Version 0.2 - Be aware of config syntax change*
 
 Revisions for Kirby CMS. A kind of version backup of the content text files.
 
@@ -26,6 +26,7 @@ Revisions for Kirby CMS. A kind of version backup of the content text files.
 - [Field](https://github.com/jenstornell/kirby-revisions/blob/master/docs/FIELD.md)
 - [System (Advanced)](https://github.com/jenstornell/kirby-revisions/blob/master/docs/SYSTEM.md)
 - [Actions (Advanced)](https://github.com/jenstornell/kirby-revisions/blob/master/docs/ACTIONS.md)
+- [Changelog](https://github.com/jenstornell/kirby-revisions/blob/master/docs/CHANGELOG.md)
 
 ## Requirements
 
