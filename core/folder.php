@@ -1,29 +1,35 @@
 <?php
-class RevisionsFolder {
+class PluginRevisionsFolder {
 	// Add revision folder
 	public static function add( $page ) {
 		$language_path = self::languagePath( $page->id() );
 
 		if( ! file_exists( $language_path ) ) {
-			return mkdir( $language_path, 0644, true );
+			@mkdir( $language_path, 0644, true );
 		}
 	}
 
 	// Delete folder with contents
 	public static function delete($page) {
-		$revisions_folder = RevisionsFolder::revisionPath( $page->id() );
+		$revisions_folder = PluginRevisionsFolder::revisionPath( $page->id() );
 
 		$iterator = new RecursiveDirectoryIterator( $revisions_folder, RecursiveDirectoryIterator::SKIP_DOTS );
 		$paths = new RecursiveIteratorIterator( $iterator, RecursiveIteratorIterator::CHILD_FIRST );
 
-		foreach( $paths as $path ) {
-			if( $path->isDir() ){
-				rmdir( $path->getRealPath() );
-			} else {
-				unlink( $path->getRealPath() );
+		if( ! empty( $paths ) ) {
+			foreach( $paths as $path ) {
+				if( is_writable( $path->getRealPath() ) ) {
+					if( $path->isDir() ) {
+						@rmdir( $path->getRealPath() );
+					} else {
+						@unlink( $path->getRealPath() );
+					}
+				}
 			}
 		}
-		rmdir( $revisions_folder );
+		if( is_writable( $revisions_folder ) ) {
+			@rmdir( $revisions_folder );
+		}
 	}
 
 	// Rename folder with contents
@@ -32,13 +38,13 @@ class RevisionsFolder {
 		$new_path = self::revisionPath( $new->id() );
 
 		if( file_exists( $old_path ) && is_writable( $old_path ) ) {
-			rename( $old_path, $new_path );
+			@rename( $old_path, $new_path );
 		}
 	}
 
 	// Revisions root path
 	public static function rootPath() {
-		return c::get('revisions.path', kirby()->roots()->index() . DS . 'revisions');
+		return c::get('plugin.revisions.path', kirby()->roots()->index() . DS . 'revisions');
 	}
 
 	// Revision folder path

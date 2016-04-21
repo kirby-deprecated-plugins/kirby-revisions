@@ -8,8 +8,8 @@ $kirby->set('field', 'revisions',  __DIR__ . DS . 'field');
 
 // Revision callback
 $save_revision = function( $page ) {
-	RevisionsFolder::add( $page );
-	RevisionContent::add( $page );
+	PluginRevisionsFolder::add( $page );
+	PluginRevisionsContent::add( $page );
 };
 
 // Add revision on create and update
@@ -18,16 +18,16 @@ kirby()->hook('panel.page.update', $save_revision );
 
 // Delete revision on delete
 kirby()->hook('panel.page.delete', function( $page ) {
-	RevisionsFolder::delete( $page );
+	PluginRevisionsFolder::delete( $page );
 });
 
 // If page is renamed and is default language, rename revision, else add new revision.
 kirby()->hook('panel.page.move', function( $new, $old ) {
-	if( RevisionsLanguage::isDefault() ) {
-		RevisionsFolder::rename( $old, $new );
+	if( PluginRevisionsLanguage::isDefault() ) {
+		PluginRevisionsFolder::rename( $old, $new );
 	} else {
-		RevisionsFolder::add( $new );
-		RevisionContent::add( $new );
+		PluginRevisionsFolder::add( $new );
+		PluginRevisionsContent::add( $new );
 	}
 });
 

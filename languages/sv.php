@@ -1,4 +1,4 @@
 <?php
 l::set( array(
-	'no.revisions.found' => 'Inga versioner funna'
+	'no.revisions.found' => 'Inga tidigare versioner funna'
 ));

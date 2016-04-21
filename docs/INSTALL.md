@@ -14,7 +14,7 @@ You need to install the plugin for the field to be installed.
 ```yaml
 fields:
   revisions:
-    label: Older versions
+    label: Previous versions
     type: revisions
 ```
 
