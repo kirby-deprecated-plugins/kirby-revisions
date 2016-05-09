@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3
+
+- Added namespaces
+- Minified css is now generated a swith Gulp and Scss.
+- Option added to prevent deletion of revision when a page is deleted.
+- Field assets are set as files, not inline.
+
 ## 0.2
 
 - Changed prefix from `revisions.` to `plugin.revisions`. Added it to docs.

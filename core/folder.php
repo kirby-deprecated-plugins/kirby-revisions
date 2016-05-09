@@ -1,5 +1,10 @@
 <?php
-class PluginRevisionsFolder {
+namespace JensTornell\Revisions;
+
+use JensTornell\Revisions as Revisions;
+use C;
+
+class Folder {
 	// Add revision folder
 	public static function add( $page ) {
 		$language_path = self::languagePath( $page->id() );
@@ -11,10 +16,10 @@ class PluginRevisionsFolder {
 
 	// Delete folder with contents
 	public static function delete($page) {
-		$revisions_folder = PluginRevisionsFolder::revisionPath( $page->id() );
+		$revisions_folder = Revisions\Folder::revisionPath( $page->id() );
 
-		$iterator = new RecursiveDirectoryIterator( $revisions_folder, RecursiveDirectoryIterator::SKIP_DOTS );
-		$paths = new RecursiveIteratorIterator( $iterator, RecursiveIteratorIterator::CHILD_FIRST );
+		$iterator = new \RecursiveDirectoryIterator( $revisions_folder, \RecursiveDirectoryIterator::SKIP_DOTS );
+		$paths = new \RecursiveIteratorIterator( $iterator, \RecursiveIteratorIterator::CHILD_FIRST );
 
 		if( ! empty( $paths ) ) {
 			foreach( $paths as $path ) {

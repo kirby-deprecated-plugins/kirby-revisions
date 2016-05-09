@@ -1,5 +1,7 @@
 <?php
-class PluginRevisionsLanguage {
+namespace JensTornell\revisions;
+
+class Language {
 	// Get language file path
 	public static function path() {
 		$language = site()->user()->language();

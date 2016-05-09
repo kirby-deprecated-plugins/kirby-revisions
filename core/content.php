@@ -1,9 +1,14 @@
 <?php
-class PluginRevisionsContent {
+namespace JensTornell\Revisions;
+
+use JensTornell\Revisions as Revisions;
+use C;
+
+class Content {
 	// Add page and clean up
 	public static function add($page) {
 		$filename = date('Y-m-d@H.i.s') . '-' . $page->intendedTemplate() . '.txt';
-		$language_path = PluginRevisionsFolder::languagePath( $page->id() );
+		$language_path = Revisions\Folder::languagePath( $page->id() );
 
 		if( file_exists( $language_path ) && is_writable( $language_path ) ) {
 			$revision_path = $language_path . DS . $filename;
@@ -16,7 +21,7 @@ class PluginRevisionsContent {
 
 	// Clean up revisions to limit
 	public static function cleanup($page) {
-		$path = PluginRevisionsFolder::languagePath( $page->id() );
+		$path = Revisions\Folder::languagePath( $page->id() );
 		$pages = array_reverse( glob( $path . DS . '*' ) );
 		if( self::limit() !== false ) {
 			$pages = array_slice( $pages, self::limit() );
@@ -41,7 +46,7 @@ class PluginRevisionsContent {
 		if( site()->multilang() ) {
 			$language = site()->language()->code() . '/';
 		}
-		$root = kirby()->urls()->index() . '/' . basename( PluginRevisionsFolder::rootPath() );
+		$root = kirby()->urls()->index() . '/' . basename( Revisions\Folder::rootPath() );
 		$url = $root . '/' . $page->id() . '/.revisions/' . $language . $filename;
 		return $url;
 	}
