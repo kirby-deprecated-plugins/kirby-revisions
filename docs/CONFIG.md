@@ -26,6 +26,7 @@ If you want to change the root `revisions` path for some reason, it's possible. 
 Allow the field to delete the revision when the page is deleted.
 
 ```php
+c::set('plugin.revisions.delete', true);
 ```
 
 ## Protect the revisions folder
