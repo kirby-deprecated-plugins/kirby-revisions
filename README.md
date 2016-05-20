@@ -1,6 +1,6 @@
 # Revisions
 
-*Version 0.3*
+*Version 0.4*
 
 Revisions for Kirby CMS. A kind of version backup of the content text files.
 
@@ -30,7 +30,7 @@ Revisions for Kirby CMS. A kind of version backup of the content text files.
 
 ## Requirements
 
-- Kirby 2.3 beta 2
+- Kirby 2.3
 
 ## Troubleshooting
 

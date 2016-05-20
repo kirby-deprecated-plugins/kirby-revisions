@@ -21,6 +21,14 @@ When a new revision is created, old ones are deleted. It will keep only the newe
 
 If you want to change the root `revisions` path for some reason, it's possible. Be aware that you need to add the full path to a directory, not just a directory name.
 
+## Permission
+
+If you want to increse security, you can change the permissions.
+
+```php
+c::get('plugin.revisions.permission', 0755)
+```
+
 ## Delete
 
 Allow the field to delete the revision when the page is deleted.

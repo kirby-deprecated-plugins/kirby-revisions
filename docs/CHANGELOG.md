@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4
+
+- Before it did not work for me because of permissions. Now it does. Default permissions on folders are 0755.
+- A new config `plugin.revisions.permission` is added which mean you can change the permissions if you want.
+
 ## 0.3
 
 - Added namespaces

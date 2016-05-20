@@ -10,7 +10,7 @@ class Folder {
 		$language_path = self::languagePath( $page->id() );
 
 		if( ! file_exists( $language_path ) ) {
-			@mkdir( $language_path, 0644, true );
+			@mkdir( $language_path, c::get('plugin.revisions.permission', 0755), true );
 		}
 	}
 
