@@ -1,6 +1,6 @@
 # Kirby Revisions 2
 
-*Version 2.0 beta* - ***For version 1, see [version-1](tree/version-1) branch.***
+*Version 2.0 beta* - ***For version 1, see [version-1](https://github.com/jenstornell/kirby-revisions/tree/version-1) branch.***
 
 ***I do not guarantee that this is a safe way to backup and restore backups.***
 
@@ -56,9 +56,10 @@ https://getkirby.com/docs/developer-guide/objects/collections
 
 ## Changelog
 
-**0.1**
+**2.0**
 
-- Initial release
+- Completely rewritten
+- Kirby uses pages as revisions
 
 ## Misc
 
