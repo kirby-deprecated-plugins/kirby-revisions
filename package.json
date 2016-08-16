@@ -1,8 +1,0 @@
-{
-  "name": "revisions",
-  "description": "Revisions for Kirby CMS",
-  "author": "Jens Törnell <jens.tornell@gmail.com>",
-  "version": "0.4",
-  "type": "kirby-plugin",
-  "license": "MIT"
-}
