@@ -1,0 +1,12 @@
+title: Revision
+pages: false
+files: false
+options:
+  preview: false
+  status: false
+  template: false
+  url: false
+hide: true
+fields:
+  revision:
+    type: revision

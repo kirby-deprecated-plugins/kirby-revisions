@@ -1,0 +1,40 @@
+.revision-content {
+	margin-bottom: .5em;
+}
+
+.revision-part {
+	background: #fff;
+	padding: .5em;
+	border: 2px solid #ddd;
+	line-height: 1.5em;
+}
+
+.revision-content h2 {
+	padding-bottom: .5em;
+}
+.revision-part {
+	margin-bottom: 1.5em;
+}
+.revision-ins {
+	background: #dff0d8;
+	border: 1px solid #d6e9c6;
+	color: #3c763d;
+	text-decoration: none;
+}
+.revision-del {
+	color: #a94442;
+	border: 1px solid #f2dede;
+	background: #f2dede;
+	text-decoration: none;
+}
+
+.revision-action {
+	text-align: right;
+}
+
+/*.mainbar .form .buttons {
+	display: none;
+}
+.mainbar .form {
+	padding-bottom: 0;
+}*/

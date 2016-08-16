@@ -1,0 +1,14 @@
+title: Page
+pages:
+  limit: 10
+files: false
+options:
+  preview: false
+  status: false
+  template: false
+  url: false
+hide: true
+fields:
+  revisions:
+    label: Revision Archive
+    type: revisionarchive
