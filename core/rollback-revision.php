@@ -33,14 +33,6 @@ class Rollback {
 		return $keys;
 	}
 
-	/*function revisionCollection() {
-		$collection = $this->revision->content( $this->lang )->toArray();
-		$collection = $this->Collection->modifiedToTitle( $collection, $this->page->modified('Y-m-d, H:i:s') );
-		$collection = $this->Collection->removeAction( $collection );
-		$collection = $this->Collection->removeTemplate( $collection );
-		return $collection;
-	}*/
-
 	function merge() {
 		return array_merge(
 			$this->pageCollection(),
@@ -49,6 +41,6 @@ class Rollback {
 	}
 
 	function update() {
-		return $this->page->update( $this->merge() );
+		return $this->page->update( $this->merge(), $this->lang );
 	}
 }
