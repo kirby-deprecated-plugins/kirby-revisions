@@ -1,25 +1,6 @@
 <?php
 namespace JensTornell\Revisions;
 
-class ArraysManipulate {
-	public $page_array;
-
-	function __construct( $page_array = array(), $revision_array = array() ) {
-		$this->page_array = $page_array;
-	}
-
-	function contentArray() {
-		echo 'test';
-//		print_r($this->page_array);
-		/*$array = $this->page->content()->toArray();
-		if( isset( $array['title'] ) ) {
-			$array['revision_title'] = $array['title'];
-			$array['title'] = $this->page->modified('Y-m-d, H:i:s');
-		}
-		return $array;*/
-	}
-}
-
 // Manipulate array
 class Collection {
 	// Title to modified
@@ -31,9 +12,9 @@ class Collection {
 		return $collection;
 	}
 
-	// Add type
-	function addType( $collection, $type ) {
-		$collection['revision_type'] = $type;
+	// Add action
+	function addAction( $collection, $action ) {
+		$collection['revision_action'] = $action;
 		return $collection;
 	}
 
@@ -43,9 +24,9 @@ class Collection {
 		return $collection;
 	}
 
-	// Remove type
-	function removeType( $collection ) {
-		$collection['revision_type'] = null;
+	// Remove action
+	function removeAction( $collection ) {
+		$collection['revision_action'] = null;
 		return $collection;
 	}
 

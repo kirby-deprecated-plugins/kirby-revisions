@@ -1,6 +1,6 @@
 # Kirby Revisions 2
 
-*Version 2.0 beta* - ***For version 1, see [version-1](https://github.com/jenstornell/kirby-revisions/tree/version-1) branch.***
+*Version 2.1 beta* - ***For version 1, see [version-1](https://github.com/jenstornell/kirby-revisions/tree/version-1) branch.***
 
 ***I do not guarantee that this is a safe way to backup and restore backups.***
 
@@ -55,6 +55,11 @@ https://getkirby.com/docs/developer-guide/objects/collections
 *An example might be added in a later point of time.*
 
 ## Changelog
+
+**2.1**
+
+- **Bugfix:** Renamed revisions.php to kirby-revisions.php to match the folder name.
+- Renamed `type` to `action`. 
 
 **2.0**
 

@@ -34,7 +34,7 @@ class Rollback {
 	function revisionCollection() {
 		$collection = $this->revision->content( $this->lang )->toArray();
 		$collection = $this->Collection->ModifiedToTitle( $collection, $this->page->modified('Y-m-d, H:i:s') );
-		$collection = $this->Collection->removeType( $collection );
+		$collection = $this->Collection->removeAction( $collection );
 		$collection = $this->Collection->removeTemplate( $collection );
 		return $collection;
 	}

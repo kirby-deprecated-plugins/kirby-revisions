@@ -6,17 +6,17 @@ class CreateRevision {
 	public $page;
 	public $collection;
 	public $id;
-	public $type;
+	public $action;
 
-	function go($page, $type, $lang) {
+	function go($page, $action, $lang) {
 		$this->Collection = new Revisions\Collection();
 
 		$this->lang = (string)$lang;
-		$this->type = $type;
+		$this->action = $action;
 		$this->page = $page;
 		$this->collection = $page->content($this->lang)->toArray();
 		$this->template = $page->intendedTemplate();
-		$this->id = $this->page->id() . '/' . 'revisions' . '/r-' . time() . '-' . $type;
+		$this->id = $this->page->id() . '/' . 'revisions' . '/r-' . time() . '-' . $action;
 
 		$this->create();
 	}
@@ -36,7 +36,7 @@ class CreateRevision {
 
 	function filter($collection) {
 		$collection = $this->Collection->titleToModified( $this->collection, $this->page->modified('Y-m-d, H:i:s') );
-		$collection = $this->Collection->addType( $collection, $this->type );
+		$collection = $this->Collection->addAction( $collection, $this->action );
 		$collection = $this->Collection->addTemplate( $collection, $this->template );
 		return $collection;
 	}

@@ -77,9 +77,9 @@
 					</td>
 					<td>
 						<a href="<?php echo panel()->urls()->index() . '/pages/' . $revision->id() . '/edit'; ?>">
-							<span class="revision-type">
+							<span class="revision-action">
 								<i class="fa fa-tag" aria-hidden="true"></i>
-								<?php echo ucfirst( $revision->revision_type() ); ?>
+								<?php echo ucfirst( $revision->revision_action() ); ?>
 							</span>
 						</a>
 					</td>
