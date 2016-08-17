@@ -55,7 +55,7 @@ class RevisionField extends BaseField {
 		$root = u();
 		$key = 'revision.rollback';
 		$id = $this->revision_obj->id();
-		$lang = site()->language()->code();
+		$lang = (string)site()->language();
 
 		$url = $root . '/' . $key . '/' . $this->revision_obj->id() . '?csrf=' . $csrf . '&lang=' . $lang;
 
