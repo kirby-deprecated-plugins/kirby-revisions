@@ -10,6 +10,8 @@ class Rollback {
 		$this->uid = $uid;
 
 		$this->revision = page($uid);
+		$this->revision_array = $this->revision->content( $this->lang )->toArray();
+
 		$this->page = $this->revision->parent()->parent();
 
 		$this->merged = $this->merge();
@@ -31,16 +33,19 @@ class Rollback {
 		return $keys;
 	}
 
-	function revisionCollection() {
+	/*function revisionCollection() {
 		$collection = $this->revision->content( $this->lang )->toArray();
-		$collection = $this->Collection->ModifiedToTitle( $collection, $this->page->modified('Y-m-d, H:i:s') );
+		$collection = $this->Collection->modifiedToTitle( $collection, $this->page->modified('Y-m-d, H:i:s') );
 		$collection = $this->Collection->removeAction( $collection );
 		$collection = $this->Collection->removeTemplate( $collection );
 		return $collection;
-	}
+	}*/
 
 	function merge() {
-		return array_merge( $this->pageCollection(), $this->revisionCollection() );
+		return array_merge(
+			$this->pageCollection(),
+			$this->Collection->revisionToPage( $this->revision_array, $this->page->modified('Y-m-d, H:i:s'))
+		);
 	}
 
 	function update() {

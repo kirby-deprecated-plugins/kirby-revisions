@@ -61,48 +61,46 @@
 				<th>Updated</th>
 				<th>Action</th>
 				<th>Template</th>
-				<?php /* <th>Size</th> */ ?>
+				<th>Size</th>
 			</tr>
 		</thead>
 		<tbody>
-			<?php foreach( $slice as $revision) : ?>
-				<tr>
-					<td>
-						<a href="<?php echo panel()->urls()->index() . '/pages/' . $revision->id() . '/edit'; ?>">
-							<span class="revision-date">
-								<i class="fa fa-clock-o"></i>
-								<?php echo $revision->modified('Y-m-d, H:i:s'); ?>
-							</span>
-						</a>
-					</td>
-					<td>
-						<a href="<?php echo panel()->urls()->index() . '/pages/' . $revision->id() . '/edit'; ?>">
-							<span class="revision-action">
-								<i class="fa fa-tag" aria-hidden="true"></i>
-								<?php echo ucfirst( $revision->revision_action() ); ?>
-							</span>
-						</a>
-					</td>
-					<td>
-						<a href="<?php echo panel()->urls()->index() . '/pages/' . $revision->id() . '/edit'; ?>">
-							<span class="revision-template">
-								<i class="fa fa-file-code-o" aria-hidden="true"></i>
-								<?php echo ucfirst( $revision->revision_template() ); ?>
-							</span>
-						</a>
-					</td>
-					<?php /*
-					<td>
-						<a href="<?php echo panel()->urls()->index() . '/pages/' . $revision->id() . '/edit'; ?>">
-							<span class="revision-template">
-								<i class="fa fa-file-code-o" aria-hidden="true"></i>
-								<?php echo filesize($revision->textfile()); ?> bytes
-							</span>
-						</a>
-					</td> */
-					?>
-				</tr>
-			<?php endforeach; ?>
+			<?php foreach( $items as $item ) : ?>
+			<tr>
+				<td>
+					<a href="<?php echo $item['edit_url']; ?>">
+						<span class="revision-date">
+							<i class="fa fa-clock-o"></i>
+							<?php echo $item['modified']; ?>
+						</span>
+					</a>
+				</td>
+				<td>
+					<a href="<?php echo $item['edit_url']; ?>">
+						<span class="revision-action">
+							<i class="fa fa-tag" aria-hidden="true"></i>
+							<?php echo $item['action']; ?>
+						</span>
+					</a>
+				</td>
+				<td>
+					<a href="<?php echo $item['edit_url']; ?>">
+						<span class="revision-template">
+							<i class="fa fa-file-code-o" aria-hidden="true"></i>
+							<?php echo $item['template']; ?>
+						</span>
+					</a>
+				</td>
+				<td>
+					<a href="<?php echo $item['edit_url']; ?>">
+						<span class="revision-template">
+							<i class="fa fa-file-o" aria-hidden="true"></i>
+							<?php echo $item['size']; ?> bytes
+						</span>
+					</a>
+				</td>
+			</tr>
+		<?php endforeach; ?>
 		</tbody>
 	</table>
 <?php else : ?>

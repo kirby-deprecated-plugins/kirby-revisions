@@ -36,8 +36,16 @@ class Collection {
 		return $collection;
 	}
 
+	// Revision to page
+	function revisionToPage( $collection, $modified ) {
+		$collection = $this->modifiedToTitle( $collection, $modified );
+		$collection = $this->removeAction( $collection );
+		$collection = $this->removeTemplate( $collection );
+		return $collection;
+	}
+
 	// Modified to title
-	function ModifiedToTitle( $collection ) {
+	function modifiedToTitle( $collection ) {
 		if( isset( $collection['revision_title'] ) ) {
 			$collection['title'] = $collection['revision_title'];
 			unset( $collection['revision_title'] );
@@ -46,10 +54,10 @@ class Collection {
 	}
 
 	// Array to content for comparation
-	function arrayToContent( $array = array() ) {
+	function arrayToContent( $collection = array() ) {
 		$content = '';
-		if( ! empty( $array ) ) {
-			foreach( $array as $key => $value ) {
+		if( ! empty( $collection ) ) {
+			foreach( $collection as $key => $value ) {
 				$content .= $key . ':' . $value . ' ';
 			}
 		}

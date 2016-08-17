@@ -147,7 +147,7 @@ class RevisionField extends BaseField {
 
 	// Array fix
 	function arrayFix( $collection ) {
-		$collection = $this->Collection->ModifiedToTitle($collection);
+		$collection = $this->Collection->modifiedToTitle($collection);
 		$collection = $this->Collection->order( $this->keys, $collection );
 		return $collection;
 	}
