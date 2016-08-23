@@ -2,7 +2,7 @@
   "name": "kirby-revisions",
   "description": "Revisions for Kirby CMS",
   "author": "Jens Törnell <jens.tornell@gmail.com>",
-  "version": "2.3",
+  "version": "2.5",
   "type": "kirby-plugin",
   "license": "MIT"
 }

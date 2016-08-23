@@ -1,0 +1,22 @@
+.revisions-count {
+	margin-bottom: .5em;
+}
+
+.revisions-page-numbers {
+	display: flex;
+	margin-top: 1.5em;
+}
+.revisions-page-numbers a {
+	padding: .5em 1em;
+	display: block;
+}
+
+.revisions-page-numbers-prev,
+.revisions-page-numbers-next {
+	width: 2em;
+}
+
+.revisions-page-numbers-info {
+	flex: 1;
+	text-align: center;
+}

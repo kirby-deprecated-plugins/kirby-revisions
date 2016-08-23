@@ -11,7 +11,6 @@ kirby()->hook('panel.page.update', function( $page ) {
 	$obj = new Revisions\CreateRevisions( $page );
 	$obj = new Revisions\CreateRevision();
 	$obj->go( $page, 'update', $page->content()->language() );
-	debug_hook(site()->language() . time());
 });
 
 function debug_hook($content) {

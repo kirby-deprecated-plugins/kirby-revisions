@@ -28,13 +28,6 @@
 	text-decoration: none;
 }
 
-.revision-action {
+.revision-rollback {
 	text-align: right;
 }
-
-/*.mainbar .form .buttons {
-	display: none;
-}
-.mainbar .form {
-	padding-bottom: 0;
-}*/

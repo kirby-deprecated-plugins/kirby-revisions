@@ -1,8 +1,13 @@
 <?php
 namespace JensTornell\Revisions;
+use JensTornell\Revisions as Revisions;
 
-// Manipulate array
 class Collection {
+
+	function __construct() {
+		$this->Key = new Revisions\Key();
+	}
+
 	// Title to modified
 	function titleToModified( $collection, $modified ) {
 		if( isset( $collection['title'] ) ) {
@@ -38,6 +43,7 @@ class Collection {
 
 	// Revision to page
 	function revisionToPage( $collection, $modified ) {
+		$keys = $this->Key->all( $collection );
 		$collection = $this->modifiedToTitle( $collection, $modified );
 		$collection = $this->removeAction( $collection );
 		$collection = $this->removeTemplate( $collection );
@@ -62,15 +68,5 @@ class Collection {
 			}
 		}
 		return substr( $content, 0, -1 );
-	}
-
-	function order( $keys, $collection ) {
-		$new = array();
-		foreach( $keys as $key ) {
-			if( array_key_exists( $key, $collection ) ) {
-				$new[$key] = $collection[$key];
-			}
-		}
-		return $new;
 	}
 }
